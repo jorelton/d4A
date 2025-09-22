@@ -1,0 +1,475 @@
+        /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Hide unnecessary elements */
+.mTop,
+script,
+.za-captcha-container,
+.za-newsletter-container {
+  display: none !important;
+}
+
+/* Main Container */
+.login-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header Section with Logo */
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(135deg, #2E86AB 0%, #A23B72 100%);
+  z-index: 1;
+}
+
+.login-box::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background-image: url('https://www.d4aonline.com/files/Logo/D4A-logo%20Only-final-vertical%20-1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+}
+
+/* Company Logo in Original Position - Hide it */
+.serviceLogo {
+  display: none !important;
+}
+
+/* Form Container */
+#signupform {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  margin: 0;
+}
+
+/* Signup Table Styling */
+.signupTable {
+  width: 100% !important;
+  border: none !important;
+  margin: 0;
+  padding: 40px 40px 30px 40px;
+  margin-top: 80px; /* Account for header */
+}
+
+.signupTable tbody,
+.signupTable tr,
+.signupTable td {
+  display: block;
+  width: 100%;
+  border: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.signupTable tr {
+  margin-bottom: 20px;
+}
+
+.signupTable td {
+  padding: 0 !important;
+}
+
+/* Welcome Message */
+.welcomeMessage {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px !important;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e8ecf0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Input Styling */
+.sgnemail,
+.form-input,
+.countryCnt,
+.za-country-select,
+.za-state-select {
+  width: 100% !important;
+  padding: 15px 20px !important;
+  border: 2px solid #e8ecf0 !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  background: #f8fafc !important;
+  color: #2c3e50 !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.sgnemail:focus,
+.form-input:focus,
+.countryCnt:focus,
+.za-country-select:focus,
+.za-state-select:focus {
+  border-color: #667eea !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.sgnemail::placeholder,
+.form-input::placeholder {
+  color: #94a3b8 !important;
+  font-weight: 400 !important;
+}
+
+/* Password Field Special Styling */
+.za-password-container {
+  position: relative;
+}
+
+.za-password-container .rel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.show-password {
+  position: absolute !important;
+  right: 15px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  cursor: pointer !important;
+  color: #667eea !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  z-index: 10 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.show-password:hover {
+  color: #764ba2 !important;
+}
+
+/* Select Dropdown Styling */
+.za-country-container-arrow,
+.za-state-container-arrow {
+  position: relative;
+}
+
+.za-country-container-arrow::after,
+.za-state-container-arrow::after {
+  content: '▼';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+/* Terms of Service Styling */
+.za-tos-container {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 20px !important;
+  background: #f8fafc !important;
+  border-radius: 12px !important;
+  border: 1px solid #e8ecf0 !important;
+  margin: 10px 0 !important;
+}
+
+.sign_agree {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #475569 !important;
+}
+
+.za-tos {
+  margin: 0 !important;
+  transform: scale(1.2);
+  accent-color: #667eea;
+}
+
+.sign_agree a {
+  color: #667eea !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease !important;
+}
+
+.sign_agree a:hover {
+  color: #764ba2 !important;
+  text-decoration: underline !important;
+}
+
+/* Submit Button */
+.submit-btn,
+.submitSignUp {
+  width: 100% !important;
+  padding: 18px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-top: 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+}
+
+.submit-btn:hover,
+.submitSignUp:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4) !important;
+}
+
+.submit-btn:active,
+.submitSignUp:active {
+  transform: translateY(0) !important;
+}
+
+.submitSignUp.diableBtnSignup {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Loading Animation */
+.successLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.signupArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Error Handling */
+.error {
+  color: #e74c3c !important;
+  font-size: 14px !important;
+  margin-top: 5px !important;
+  display: block !important;
+}
+
+/* End User Email Field */
+#za_end_email {
+  margin-top: 15px;
+}
+
+.end_field_msg,
+.end_field_msg_sameemail,
+.end_field_msg_samedomain {
+  margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .login-box {
+    max-width: 400px;
+  }
+  
+  .signupTable {
+    padding: 30px 25px 25px 25px;
+    margin-top: 70px;
+  }
+  
+  .welcomeMessage {
+    font-size: 24px;
+    margin-bottom: 25px !important;
+  }
+  
+  .sgnemail,
+  .form-input,
+  .countryCnt {
+    padding: 12px 15px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    max-width: 350px;
+  }
+  
+  .signupTable {
+    padding: 25px 20px 20px 20px;
+  }
+  
+  .welcomeMessage {
+    font-size: 22px;
+  }
+  
+  .login-box::after {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Additional Enhancements */
+.signupTable tr:not(:last-child) {
+  position: relative;
+}
+
+.signupTable tr:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+}
+
+/* Custom Checkbox Styling */
+#signup-termservice {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e8ecf0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#signup-termservice:checked {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+#signup-termservice:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+.sgnemail:focus,
+.form-input:focus,
+.countryCnt:focus,
+.submit-btn:focus,
+.submitSignUp:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.3);
+  outline-offset: 2px;
+}
+
+/* Brand Colors Integration */
+:root {
+  --primary-blue: #2E86AB;
+  --primary-orange: #F18701;
+  --primary-green: #5BB318;
+  --primary-pink: #A23B72;
+  --text-dark: #2c3e50;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --border-light: #e8ecf0;
+}
+
+/* Company Branding Footer */
+.login-box {
+  position: relative;
+}
+
+.login-box::before {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-pink) 50%, var(--primary-orange) 100%);
+}
+
+/* /* Enhanced Visual Elements * */
+.signupTable {
+  position: relative;
+  overflow: visible;
+}
+
+.signupTable::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-orange), var(--primary-green));
+  border-radius: 2px;
+}
