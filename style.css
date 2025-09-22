@@ -462,6 +462,9 @@ script,
   overflow: visible;
 }
 
+
+/* /* Enhanced Visual Elements * */
+
 .signupTable::before {
   content: '';
   position: absolute;
@@ -473,3 +476,4 @@ script,
   background: linear-gradient(90deg, var(--primary-orange), var(--primary-green));
   border-radius: 2px;
 }
+/*hfjhjcfjc*/
